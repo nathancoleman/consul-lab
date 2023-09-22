@@ -1,0 +1,10 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceDefaults
+metadata:
+  name: external
+spec:
+  protocol: tcp
+  destination:
+    addresses:
+      - "jsonplaceholder.typicode.com"
+    port: 443

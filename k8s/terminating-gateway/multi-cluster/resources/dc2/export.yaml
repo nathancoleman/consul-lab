@@ -1,0 +1,12 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ExportedServices
+metadata:
+  name: default
+spec:
+  services:
+    # - name: terminating-gateway
+    #   consumers:
+    #     - peer: dc1
+    - name: external
+      consumers:
+        - peer: dc1

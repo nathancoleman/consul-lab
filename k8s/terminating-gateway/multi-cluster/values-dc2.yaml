@@ -1,0 +1,27 @@
+global:
+  name: consul
+  datacenter: dc2
+  peering:
+    enabled: true
+  tls:
+    enabled: true
+    enableAutoEncrypt: true
+  acls:
+    manageSystemACLs: true
+  
+connectInject:
+  default: true
+  transparentProxy:
+    defaultEnabled: true
+
+meshGateway:
+  enabled: true
+
+terminatingGateways:
+  enabled: true
+
+ui:
+  enabled: true
+  service:
+    enabled: true
+    type: LoadBalancer

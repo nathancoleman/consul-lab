@@ -1,0 +1,16 @@
+global:
+  name: consul
+  
+connectInject:
+  default: true
+  transparentProxy:
+    defaultEnabled: true
+
+terminatingGateways:
+  enabled: true
+
+ui:
+  enabled: true
+  service:
+    enabled: true
+    type: LoadBalancer
