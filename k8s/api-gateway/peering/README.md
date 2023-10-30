@@ -48,3 +48,7 @@ $ curl http://<ip_address>
   "code": 200
 }
 ```
+
+### Envoy Configs
+
+The resulting proxy configurations for each proxy can be found in [envoy-configs](./envoy-configs/).

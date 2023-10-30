@@ -1,0 +1,78 @@
+{
+    "consul-mesh-gateway-5d4fbd4b58-6r4l8": {
+        "clusters": [
+            {
+                "Name": "consul-dataplane",
+                "FullyQualifiedDomainName": "consul-dataplane",
+                "Endpoints": [
+                    "127.0.0.1:43485"
+                ],
+                "Type": "STATIC",
+                "LastUpdated": "2023-10-30T15:20:06.123Z"
+            },
+            {
+                "Name": "backend",
+                "FullyQualifiedDomainName": "backend.default.default.dc1.external.0fec3a7d-2dee-2a0b-fbd4-7ac98a085fde.consul",
+                "Endpoints": [
+                    "34.75.68.110:443"
+                ],
+                "Type": "EDS",
+                "LastUpdated": "2023-10-30T17:49:59.924Z"
+            },
+            {
+                "Name": "server",
+                "FullyQualifiedDomainName": "server.dc1.peering.0e1c9138-f0af-416c-9aee-a8d7c9bb6db1.consul",
+                "Endpoints": [
+                    "10.92.5.6:8502"
+                ],
+                "Type": "EDS",
+                "LastUpdated": "2023-10-30T17:47:42.918Z"
+            }
+        ],
+        "endpoints": [
+            {
+                "Address": "127.0.0.1:43485",
+                "Cluster": "consul-dataplane",
+                "Weight": 1,
+                "Status": "HEALTHY"
+            },
+            {
+                "Address": "10.92.5.6:8502",
+                "Cluster": "server",
+                "Weight": 1,
+                "Status": "HEALTHY"
+            },
+            {
+                "Address": "34.75.68.110:443",
+                "Cluster": "backend",
+                "Weight": 1,
+                "Status": "HEALTHY"
+            }
+        ],
+        "listeners": [
+            {
+                "Name": "default",
+                "Address": "10.92.4.6:8443",
+                "FilterChain": [
+                    {
+                        "Filters": [
+                            "TCP: -> server"
+                        ],
+                        "FilterChainMatch": "Any"
+                    },
+                    {
+                        "Filters": [
+                            "SNI: Upstream cluster name set by SNI field in TLS connection.",
+                            "TCP: No upstream cluster configured."
+                        ],
+                        "FilterChainMatch": "Any"
+                    }
+                ],
+                "Direction": "UNSPECIFIED",
+                "LastUpdated": "2023-10-30T17:47:42.926Z"
+            }
+        ],
+        "routes": null,
+        "secrets": []
+    }
+}

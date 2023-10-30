@@ -1,0 +1,91 @@
+{
+    "api-gateway-7fcf664bdd-xdq24": {
+        "clusters": [
+            {
+                "Name": "consul-dataplane",
+                "FullyQualifiedDomainName": "consul-dataplane",
+                "Endpoints": [
+                    "127.0.0.1:45667"
+                ],
+                "Type": "STATIC",
+                "LastUpdated": "2023-10-30T17:13:04.453Z"
+            },
+            {
+                "Name": "self_admin",
+                "FullyQualifiedDomainName": "self_admin",
+                "Endpoints": [
+                    "127.0.0.1:19000"
+                ],
+                "Type": "STATIC",
+                "LastUpdated": "2023-10-30T17:13:04.650Z"
+            },
+            {
+                "Name": "backend",
+                "FullyQualifiedDomainName": "backend.default.dc2.external.0fec3a7d-2dee-2a0b-fbd4-7ac98a085fde.consul",
+                "Endpoints": [
+                    "34.75.68.110:443"
+                ],
+                "Type": "EDS",
+                "LastUpdated": "2023-10-30T18:23:59.154Z"
+            }
+        ],
+        "endpoints": [
+            {
+                "Address": "127.0.0.1:19000",
+                "Cluster": "self_admin",
+                "Weight": 1,
+                "Status": "HEALTHY"
+            },
+            {
+                "Address": "127.0.0.1:45667",
+                "Cluster": "consul-dataplane",
+                "Weight": 1,
+                "Status": "HEALTHY"
+            },
+            {
+                "Address": "34.75.68.110:443",
+                "Cluster": "backend",
+                "Weight": 1,
+                "Status": "HEALTHY"
+            }
+        ],
+        "listeners": [
+            {
+                "Name": "http",
+                "Address": "10.92.0.6:80",
+                "FilterChain": [
+                    {
+                        "Filters": [
+                            "HTTP: "
+                        ],
+                        "FilterChainMatch": "Any"
+                    }
+                ],
+                "Direction": "OUTBOUND",
+                "LastUpdated": "2023-10-30T17:48:53.020Z"
+            },
+            {
+                "Name": "envoy_ready_listener",
+                "Address": "10.92.0.6:21000",
+                "FilterChain": [
+                    {
+                        "Filters": [
+                            "HTTP: * -> self_admin/"
+                        ],
+                        "FilterChainMatch": "Any"
+                    }
+                ],
+                "Direction": "UNSPECIFIED",
+                "LastUpdated": "2023-10-30T17:13:04.748Z"
+            }
+        ],
+        "routes": [
+            {
+                "Name": "self_admin_route",
+                "DestinationCluster": "self_admin, /",
+                "LastUpdated": "2023-10-30T17:13:04.747Z"
+            }
+        ],
+        "secrets": []
+    }
+}
