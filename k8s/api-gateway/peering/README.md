@@ -17,7 +17,7 @@ $ kubectl apply --filename dc1
 ```shell
 $ gcloud container clusters create dc2 --region=us-east1 --num-nodes=2
 $ gcloud container clusters get-credentials dc2
-$ helm upgrade --install consul hashicorp/consul --namespace=consul --create-namespace --values=values-dc1.yaml
+$ helm upgrade --install consul hashicorp/consul --namespace=consul --create-namespace --values=values-dc2.yaml
 $ kubectl --context=dc1 get secret peering-token -n consul -o yaml | kubectl --context=dc2 apply -n consul -f -
 $ kubectl apply --filename dc2
 ```
