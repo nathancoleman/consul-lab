@@ -1,0 +1,9 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceResolver
+metadata:
+  name: backend
+  namespace: consul
+spec:
+  redirect:
+    service: backend
+    peer: dc2
