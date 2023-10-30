@@ -34,4 +34,17 @@ $ kubectl --context=dc1 get gateway api-gateway -n default -o yaml | yq .status.
 Make a `GET` request to the backend in the peered cluster - dc2 - via the `Gateway` in dc1:
 ```shell
 $ curl http://<ip_address>
+{
+  "name": "backend",
+  "uri": "/",
+  "type": "HTTP",
+  "ip_addresses": [
+    "10.40.3.8"
+  ],
+  "start_time": "2023-10-30T18:24:28.792523",
+  "end_time": "2023-10-30T18:24:28.792959",
+  "duration": "436.271µs",
+  "body": "Hello World",
+  "code": 200
+}
 ```
