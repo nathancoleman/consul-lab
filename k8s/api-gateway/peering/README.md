@@ -1,5 +1,7 @@
 ## Routing from an API gateway to a service imported from a peered cluster
 
+![](setup.png)
+
 ### Prepare
 
 I generally use GKE, so the commands below reference the `gcloud` CLI for creating clusters.
