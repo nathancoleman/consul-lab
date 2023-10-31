@@ -1,0 +1,45 @@
+apiVersion: flagger.app/v1beta1
+kind: Canary
+metadata:
+  name: podinfo
+  namespace: default
+spec:
+  # deployment reference
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: backend
+  service:
+    # service port number
+    port: 8080
+    # container port number or name (optional)
+    targetPort: 8080
+    # Gateway API HTTPRoute host names
+    # hosts:
+    #  - localproject.contour.io
+    # Reference to the Gateway that the generated HTTPRoute would attach to.
+    gatewayRefs:
+      - name: api-gateway
+        namespace: default
+  analysis:
+    # schedule interval
+    interval: 1m
+    # max number of failed metric checks before rollback
+    threshold: 5
+    # total number of iterations
+    iterations: 10
+    metrics:
+      - name: request-success-rate
+        thresholdRange:
+          min: 99
+        interval: 1m
+      - name: request-duration
+        thresholdRange:
+          max: 500
+        interval: 1m
+    webhooks:
+      - name: load-test
+        url: http://flagger-loadtester.test/
+        timeout: 5s
+        metadata:
+          cmd: "hey -z 2m -q 10 -c 2 -host localproject.contour.io http://envoy.projectcontour/"
