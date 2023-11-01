@@ -1,0 +1,11 @@
+global:
+  name: consul
+  datacenter: dc1
+
+connectInject:
+  enabled: true
+
+apiGateway:
+  enabled: true
+  manageExternalCRDs: false
+  image: hashicorp/consul-api-gateway:0.5.5
