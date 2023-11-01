@@ -5,6 +5,7 @@ https://github.com/hashicorp/consul-api-gateway
 ### Install
 
 ```shell
+$ kubectl apply --kustomize "github.com/hashicorp/consul-api-gateway/config/crd?ref=v0.5.5"
 $ helm upgrade --install consul hashicorp/consul --version="1.3.0-rc1" --values values.yaml --namespace consul --create-namespace
 $ kubectl apply -f resources
 ```
