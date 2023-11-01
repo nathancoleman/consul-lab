@@ -14,6 +14,9 @@ $ helm upgrade --install consul hashicorp/consul --version="1.1.6" --values valu
 $ kubectl apply -f resources
 ```
 
+> [!NOTE]
+> You may encounter a race condition and need to delete + recreate `resources/route.yaml` after the `Gateway` has settled.
+
 ### Test
 
 Get the IP address for the Gateway:
