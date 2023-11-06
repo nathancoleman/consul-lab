@@ -8,5 +8,5 @@ spec:
   - port: 8080
     protocol: http
     services:
-      - name: backend
-        hosts: ["*"]
+    - name: backend
+      hosts: ["*"]
