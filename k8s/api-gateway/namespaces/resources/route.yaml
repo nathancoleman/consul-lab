@@ -1,0 +1,14 @@
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: backend-route-default
+  namespace: app
+spec:
+  parentRefs:
+    - name: api-gateway
+      namespace: consul
+  rules: 
+    - backendRefs:
+      - kind: Service
+        name: backend
+        port: 8080
