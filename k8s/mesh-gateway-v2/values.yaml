@@ -1,0 +1,18 @@
+global:
+  name: consul
+  datacenter: dc1
+  tls:
+    enabled: true
+
+  experiments:
+  - resource-apis
+
+  image: hashicorppreview/consul:1.18-dev
+  imageConsulK8S: hashicorppreview/consul-k8s-control-plane:1.4-dev
+  imageConsulDataplane: hashicorppreview/consul-dataplane:1.4-dev
+
+connectInject:
+  enabled: true
+
+ui:
+  enabled: false
