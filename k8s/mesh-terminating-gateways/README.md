@@ -8,12 +8,13 @@ This setup uses mesh and terminating gateways together.
 
 ### Prepare
 
-I generally use GKE, so the commands below reference the `gcloud` CLI for creating clusters.
+> [!NOTE]
+> I generally use GKE, so the commands below reference the `gcloud` CLI for creating clusters.
 
 #### Prepare dc1
 
 > [!TIP]
-> It's helpful to rename your kube context to `dc1` after running `get-credentials`
+> It's helpful to rename your kube context to `dc1` after running `gcloud container clusters get-credentials`. This makes subsequent `kubectl` commands that need to specify the context(s) easier to write and read.
 
 ```shell
 $ gcloud container clusters create dc1 --region=us-east1 --num-nodes=2
@@ -26,7 +27,7 @@ $ kubectl apply --filename dc1
 #### Prepare dc2
 
 > [!TIP]
-> It's helpful to rename your kube context to `dc2` after running `get-credentials`
+> It's helpful to rename your kube context to `dc2` after running `gcloud container clusters get-credentials`. This makes subsequent `kubectl` commands that need to specify the context(s) easier to write and read.
 
 ```shell
 $ gcloud container clusters create dc2 --region=us-east1 --num-nodes=2
