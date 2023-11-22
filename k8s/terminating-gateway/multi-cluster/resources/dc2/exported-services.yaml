@@ -7,3 +7,6 @@ spec:
     - name: serviceb
       consumers:
         - peer: dc1
+    - name: servicec
+      consumers:
+        - peer: dc1
