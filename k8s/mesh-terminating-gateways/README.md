@@ -12,7 +12,8 @@ I generally use GKE, so the commands below reference the `gcloud` CLI for creati
 
 #### Prepare dc1
 
-> [!NOTE] It's helpful to rename your kube context to `dc1` after running `get-credentials`
+> [!TIP]
+> It's helpful to rename your kube context to `dc1` after running `get-credentials`
 
 ```shell
 $ gcloud container clusters create dc1 --region=us-east1 --num-nodes=2
@@ -24,7 +25,8 @@ $ kubectl apply --filename dc1
 
 #### Prepare dc2
 
-> [!NOTE] It's helpful to rename your kube context to `dc2` after running `get-credentials`
+> [!TIP]
+> It's helpful to rename your kube context to `dc2` after running `get-credentials`
 
 ```shell
 $ gcloud container clusters create dc2 --region=us-east1 --num-nodes=2
