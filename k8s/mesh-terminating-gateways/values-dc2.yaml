@@ -1,0 +1,14 @@
+global:
+  name: consul
+  datacenter: dc2
+  peering:
+    enabled: true
+  tls:
+    enabled: true
+
+connectInject:
+  enabled: true
+  default: true
+
+meshGateway:
+  enabled: true
