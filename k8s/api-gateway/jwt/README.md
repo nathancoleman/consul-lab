@@ -1,0 +1,2 @@
+- https://github.com/jm96441n/consul-experiments/tree/main/k8s/jwts#tokens
+- https://github.com/jm96441n/consul-experiments/blob/main/k8s/jwts/consul/jwt-provider.yaml

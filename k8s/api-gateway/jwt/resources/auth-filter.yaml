@@ -1,0 +1,5 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: HTTPRouteAuthFilter
+metadata:
+  name: backend-auth-filter-default
+  namespace: default
