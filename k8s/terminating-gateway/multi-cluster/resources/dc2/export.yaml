@@ -4,9 +4,6 @@ metadata:
   name: default
 spec:
   services:
-    # - name: terminating-gateway
-    #   consumers:
-    #     - peer: dc1
-    - name: external
+    - name: serviceb
       consumers:
         - peer: dc1

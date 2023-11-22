@@ -1,4 +1,4 @@
-![](setup.png)
+![](./setup.png)
 
 This setup uses mesh and terminating gateways together.
 - `dc1` and `dc2` are peered clusters.
@@ -20,7 +20,7 @@ This setup uses mesh and terminating gateways together.
 $ gcloud container clusters create dc1 --region=us-east1 --num-nodes=2
 $ gcloud container clusters get-credentials dc1
 $ helm upgrade --install consul hashicorp/consul --namespace=consul --create-namespace --values=values-dc1.yaml
-$ kubectl apply --filename dc1
+$ kubectl apply --filename resources/dc1
 ```
 
 
@@ -32,7 +32,8 @@ $ kubectl apply --filename dc1
 ```shell
 $ gcloud container clusters create dc2 --region=us-east1 --num-nodes=2
 $ gcloud container clusters get-credentials dc2
-$ helm upgrade --install consul hashicorp/consul --namespace=consul --create-namespace --values=values-dc2.yaml
-$ kubectl --context=dc1 get secret peering-token -n consul -o yaml | kubectl --context=dc2 apply -n consul -f -
-$ kubectl apply --filename dc2
+$ kubectl create namespace consul
+$ kubectl --context=dc1 get secret peering-token-dc2 -n consul -o yaml | kubectl --context=dc2 apply -n consul -f -
+$ helm upgrade --install consul hashicorp/consul --namespace=consul --values=values-dc2.yaml
+$ kubectl apply --filename resources/dc2
 ```
