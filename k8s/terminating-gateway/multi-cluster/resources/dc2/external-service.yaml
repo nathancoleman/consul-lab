@@ -4,7 +4,3 @@ metadata:
   name: serviceb
 spec:
   protocol: tcp
-  destination:
-    addresses:
-      - "jsonplaceholder.typicode.com"
-    port: 443

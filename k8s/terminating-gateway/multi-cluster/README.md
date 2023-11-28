@@ -37,3 +37,14 @@ $ kubectl --context=dc1 get secret peering-token-dc2 -n consul -o yaml | kubectl
 $ helm upgrade --install consul hashicorp/consul --namespace=consul --values=values-dc2.yaml
 $ kubectl apply --filename resources/dc2
 ```
+
+From here, follow https://developer.hashicorp.com/consul/docs/k8s/connect/terminating-gateways
+
+### Test
+
+To test, we shell into the __source__ container and call our upstream.
+It's important that we set the `Host` header to avoid getting a `421 Misdirected Request` from Cloudflare.
+
+```shell
+$ curl --silent -H "Host: jsonplaceholder.typicode.com" http://localhost:1234/todos | jq
+```

@@ -1,0 +1,24 @@
+{
+    "Node": "external",
+    "Address": "jsonplaceholder.typicode.com",
+    "NodeMeta": {
+        "external-node": "true",
+        "external-probe": "true"
+    },
+    "Service": {
+        "Address": "jsonplaceholder.typicode.com",
+        "ID": "destination",
+        "Service": "destination",
+        "Port": 443
+    },
+    "Checks": [
+        {
+            "Name": "http-check",
+            "status": "passing",
+            "Definition": {
+                "http": "jsonplaceholder.typicode.com",
+                "interval": "30s"
+            }
+        }
+    ]
+}

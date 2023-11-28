@@ -4,9 +4,6 @@ metadata:
   name: default
 spec:
   services:
-    - name: serviceb
-      consumers:
-        - peer: dc1
-    - name: servicec
+    - name: destination
       consumers:
         - peer: dc1

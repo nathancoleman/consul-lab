@@ -19,6 +19,7 @@ meshGateway:
 
 terminatingGateways:
   enabled: true
+  logLevel: debug
 
 ui:
   enabled: true
