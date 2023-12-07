@@ -2,4 +2,6 @@ apiVersion: mesh.consul.hashicorp.com/v2beta1
 kind: MeshGateway
 metadata:
   name: mesh-gateway
-spec: {}
+  namespace: consul
+spec:
+  gatewayClassName: consul-mesh-gateway
