@@ -2,5 +2,12 @@ global:
   name: consul
   datacenter: dc1
 
+  tls:
+    enabled: true
+    enableAutoEncrypt: true
+  
+  acls:
+    manageSystemACLs: true
+
 connectInject:
   enabled: true
