@@ -40,6 +40,9 @@ $ kubectl apply --filename resources/dc2
 
 From here, follow https://developer.hashicorp.com/consul/docs/k8s/connect/terminating-gateways
 
+> [!TIP]
+> You can register the service node using stdin: `curl --request PUT --data @-` and then hit ctrl+d once you've pasted in `external-service.json`.
+
 ### Test
 
 To test, we shell into the __source__ container and call our upstream.
