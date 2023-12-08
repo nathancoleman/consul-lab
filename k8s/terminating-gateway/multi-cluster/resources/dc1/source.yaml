@@ -43,7 +43,7 @@ spec:
       labels:
         app: source
       annotations:
-        'consul.hashicorp.com/connect-service-upstreams': 'destination:1234'
+        'consul.hashicorp.com/connect-service-upstreams': 'destination.svc.dc2.peer:1234,backend.svc.dc2.peer:5678'
     spec:
       serviceAccountName: source
       containers:
