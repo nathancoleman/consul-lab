@@ -51,4 +51,4 @@ metadata:
   name: backend
   namespace: default
 spec:
-  protocol: http
+  protocol: tcp
