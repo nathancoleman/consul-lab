@@ -1,0 +1,16 @@
+apiVersion: mesh.consul.hashicorp.com/v2beta1
+kind: ExternalService
+metadata:
+  name: json-placeholder
+  namespace: default
+spec:
+  destination:
+    address: jsonplaceholder.typicode.com
+    ports: 
+    - port: 80
+      protocol: http
+    - port: 443
+      protocol: https
+      tls:
+        sni: jsonplaceholder.typicode.com
+        caFile: /etc/ssl/certs/ca-certificates.crt

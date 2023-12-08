@@ -1,0 +1,15 @@
+apiVersion: mesh.consul.hashicorp.com/v2beta1
+kind: HTTPRoute
+metadata:
+  name: source-to-destination
+  namespace: default
+spec:
+  parentRefs:
+  - kind: Service
+    name: source
+  rules: 
+    - backendRefs:
+      - group: mesh.consul.hashicorp.com
+        kind: ExternalService
+        name: json-placeholder
+        port: 80

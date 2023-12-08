@@ -1,0 +1,9 @@
+apiVersion: mesh.consul.hashicorp.com/v2beta1
+kind: TerminatingGateway
+metadata:
+  name: terminating-gateway
+  namespace: default
+spec:
+  ports:
+  - name: lan
+    protocol: mesh
