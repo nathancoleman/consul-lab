@@ -49,5 +49,5 @@ To test, we shell into the __source__ container and call our upstream.
 It's important that we set the `Host` header to avoid getting a `421 Misdirected Request` from Cloudflare.
 
 ```shell
-$ curl --silent -H "Host: jsonplaceholder.typicode.com" http://localhost:1234/todos | jq
+$ curl --silent -H "Host: jsonplaceholder.typicode.com" http://localhost:1234/todos/1 | jq
 ```

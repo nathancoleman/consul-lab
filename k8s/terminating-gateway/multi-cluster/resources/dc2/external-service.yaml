@@ -1,6 +1,6 @@
 apiVersion: consul.hashicorp.com/v1alpha1
 kind: ServiceDefaults
 metadata:
-  name: serviceb
+  name: destination
 spec:
   protocol: tcp

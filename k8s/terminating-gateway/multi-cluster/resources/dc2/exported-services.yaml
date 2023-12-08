@@ -7,3 +7,6 @@ spec:
     - name: destination
       consumers:
         - peer: dc1
+    - name: backend
+      consumers:
+        - peer: dc1
