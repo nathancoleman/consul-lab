@@ -2,9 +2,10 @@
 
 This setup uses mesh and terminating gateways together.
 - `dc1` and `dc2` are peered clusters.
-- Service B is configured as an external endpoint reachable via the terminating gateway
-- Service B is exported from `dc2` to `dc1`
-- Service B should be reachable from Service A
+- `destination` is configured as an external endpoint reachable via the terminating gateway
+- `backend` is a service on the mesh
+- `destination` and `backend` are exported from `dc2` to `dc1`
+- `destination` and `backend` should be reachable from `source` in both `dc1` and `dc2`
 
 ### Prepare
 
