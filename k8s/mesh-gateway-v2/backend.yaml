@@ -19,7 +19,6 @@ spec:
       labels:
         app: backend
       annotations:
-        consul.hashicorp.com/connect-inject: "true"
         consul.hashicorp.com/mesh-inject: "true"
     spec:
       serviceAccountName: backend
