@@ -1,18 +1,31 @@
 global:
   name: consul
   datacenter: dc1
-  tls:
-    enabled: true
+  # tls:
+  #   enabled: true
+  # acls:
+  #   manageSystemACLs: true
 
   experiments:
   - resource-apis
 
-  image: hashicorppreview/consul:1.18-dev
-  imageConsulK8S: hashicorppreview/consul-k8s-control-plane:1.4-dev
-  imageConsulDataplane: hashicorppreview/consul-dataplane:1.4-dev
+  image: ttl.sh/nathan-consul-14:1h # hashicorppreview/consul:1.18-dev
+  imageK8S: hashicorppreview/consul-k8s-control-plane:1.4.0-dev-pr-fdfde3eabed8bb4e5cf98f9134569718e954b6d8
+  # imageDataplane: hashicorppreview/consul-dataplane:1.4-dev
+
+server:
+  logLevel: trace
+
+syncCatalog:
+  consulNamespaces:
+    mirroringK8S: true
 
 connectInject:
   enabled: true
+
+meshGateway:
+  enabled: true
+  replicas: 3
 
 ui:
   enabled: false
