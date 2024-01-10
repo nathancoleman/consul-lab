@@ -1,0 +1,21 @@
+apiVersion: multicluster.consul.hashicorp.com/v2beta1
+kind: ExportedServices
+metadata:
+  name: default
+  namespace: default
+spec:
+  services:
+  - backend
+  consumers:
+  - peer: part2
+---
+apiVersion: multicluster.consul.hashicorp.com/v2beta1
+kind: ExportedServices
+metadata:
+  name: other
+  namespace: default
+spec:
+  services:
+  - backend
+  consumers:
+  - peer: part3
