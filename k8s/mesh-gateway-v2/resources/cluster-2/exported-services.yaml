@@ -5,9 +5,9 @@ metadata:
   namespace: default
 spec:
   services:
-  - backend
+  - source
   consumers:
-  - peer: part2
+  - peer: cluster-2
 ---
 apiVersion: multicluster.consul.hashicorp.com/v2beta1
 kind: ExportedServices
@@ -16,6 +16,6 @@ metadata:
   namespace: default
 spec:
   services:
-  - backend
+  - source
   consumers:
-  - peer: part3
+  - peer: cluster-3

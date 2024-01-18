@@ -1,0 +1,38 @@
+global:
+  name: consul
+  datacenter: dc1
+  # tls:
+  #   enabled: true
+  # acls:
+  #   manageSystemACLs: true
+  # adminPartitions:
+  #   enabled: true
+  #   name: default  # required name for AP hosting consul-server
+
+  # enterpriseLicense:
+  #   secretName: 'enterprise-license'
+  #   secretKey: 'key'
+
+  experiments:
+  - resource-apis
+
+  image: ttl.sh/nathan-consul-10:24h # hashicorppreview/consul:1.18-dev
+  # imageK8S: hashicorppreview/consul-k8s-control-plane:1.4.0-dev-pr-e0646cdd096116b9b01f72c050e7901578210fa7
+  # imageDataplane: hashicorppreview/consul-dataplane:1.4-dev
+
+# server:
+#   logLevel: trace
+
+# syncCatalog:
+#   consulNamespaces:
+#     mirroringK8S: true
+
+connectInject:
+  enabled: true
+
+meshGateway:
+  enabled: true
+  replicas: 3
+
+ui:
+  enabled: false
