@@ -3,71 +3,6 @@
 		"clusters": {
 			"cluster_statuses": [
 				{
-					"added_via_api": true,
-					"circuit_breakers": {
-						"thresholds": [
-							{
-								"max_connections": 1024,
-								"max_pending_requests": 1024,
-								"max_requests": 1024,
-								"max_retries": 3
-							},
-							{
-								"max_connections": 1024,
-								"max_pending_requests": 1024,
-								"max_requests": 1024,
-								"max_retries": 3,
-								"priority": "HIGH"
-							}
-						]
-					},
-					"host_statuses": [
-						{
-							"address": {
-								"socket_address": {
-									"address": "10.60.5.17",
-									"port_value": 20000
-								}
-							},
-							"health_status": {
-								"eds_health_status": "HEALTHY"
-							},
-							"locality": {},
-							"stats": [
-								{
-									"name": "cx_connect_fail"
-								},
-								{
-									"name": "cx_total"
-								},
-								{
-									"name": "rq_error"
-								},
-								{
-									"name": "rq_success"
-								},
-								{
-									"name": "rq_timeout"
-								},
-								{
-									"name": "rq_total"
-								},
-								{
-									"name": "cx_active",
-									"type": "GAUGE"
-								},
-								{
-									"name": "rq_active",
-									"type": "GAUGE"
-								}
-							],
-							"weight": 1
-						}
-					],
-					"name": "source.default.dc1.internal.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul",
-					"observability_name": "source.default.dc1.internal.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul"
-				},
-				{
 					"circuit_breakers": {
 						"thresholds": [
 							{
@@ -158,71 +93,6 @@
 						{
 							"address": {
 								"socket_address": {
-									"address": "34.74.152.54",
-									"port_value": 443
-								}
-							},
-							"health_status": {
-								"eds_health_status": "HEALTHY"
-							},
-							"locality": {},
-							"stats": [
-								{
-									"name": "cx_connect_fail"
-								},
-								{
-									"name": "cx_total"
-								},
-								{
-									"name": "rq_error"
-								},
-								{
-									"name": "rq_success"
-								},
-								{
-									"name": "rq_timeout"
-								},
-								{
-									"name": "rq_total"
-								},
-								{
-									"name": "cx_active",
-									"type": "GAUGE"
-								},
-								{
-									"name": "rq_active",
-									"type": "GAUGE"
-								}
-							],
-							"weight": 1
-						}
-					],
-					"name": "other.dc1.internal-v1.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul",
-					"observability_name": "other.dc1.internal-v1.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul"
-				},
-				{
-					"added_via_api": true,
-					"circuit_breakers": {
-						"thresholds": [
-							{
-								"max_connections": 1024,
-								"max_pending_requests": 1024,
-								"max_requests": 1024,
-								"max_retries": 3
-							},
-							{
-								"max_connections": 1024,
-								"max_pending_requests": 1024,
-								"max_requests": 1024,
-								"max_retries": 3,
-								"priority": "HIGH"
-							}
-						]
-					},
-					"host_statuses": [
-						{
-							"address": {
-								"socket_address": {
 									"address": "10.60.5.15",
 									"port_value": 8502
 								}
@@ -264,6 +134,138 @@
 					],
 					"name": "server.dc1.peering.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul",
 					"observability_name": "server.dc1.peering.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul"
+				},
+				{
+					"added_via_api": true,
+					"circuit_breakers": {
+						"thresholds": [
+							{
+								"max_connections": 1024,
+								"max_pending_requests": 1024,
+								"max_requests": 1024,
+								"max_retries": 3
+							},
+							{
+								"max_connections": 1024,
+								"max_pending_requests": 1024,
+								"max_requests": 1024,
+								"max_retries": 3,
+								"priority": "HIGH"
+							}
+						]
+					},
+					"host_statuses": [
+						{
+							"address": {
+								"socket_address": {
+									"address": "34.74.152.54",
+									"port_value": 443
+								}
+							},
+							"health_status": {
+								"eds_health_status": "HEALTHY"
+							},
+							"locality": {},
+							"stats": [
+								{
+									"name": "cx_connect_fail"
+								},
+								{
+									"name": "cx_total",
+									"value": "1"
+								},
+								{
+									"name": "rq_error"
+								},
+								{
+									"name": "rq_success"
+								},
+								{
+									"name": "rq_timeout"
+								},
+								{
+									"name": "rq_total",
+									"value": "1"
+								},
+								{
+									"name": "cx_active",
+									"type": "GAUGE"
+								},
+								{
+									"name": "rq_active",
+									"type": "GAUGE"
+								}
+							],
+							"weight": 1
+						}
+					],
+					"name": "other.dc1.internal-v1.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul",
+					"observability_name": "other.dc1.internal-v1.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul"
+				},
+				{
+					"added_via_api": true,
+					"circuit_breakers": {
+						"thresholds": [
+							{
+								"max_connections": 1024,
+								"max_pending_requests": 1024,
+								"max_requests": 1024,
+								"max_retries": 3
+							},
+							{
+								"max_connections": 1024,
+								"max_pending_requests": 1024,
+								"max_requests": 1024,
+								"max_retries": 3,
+								"priority": "HIGH"
+							}
+						]
+					},
+					"host_statuses": [
+						{
+							"address": {
+								"socket_address": {
+									"address": "10.60.5.17",
+									"port_value": 20000
+								}
+							},
+							"health_status": {
+								"eds_health_status": "HEALTHY"
+							},
+							"locality": {},
+							"stats": [
+								{
+									"name": "cx_connect_fail"
+								},
+								{
+									"name": "cx_total"
+								},
+								{
+									"name": "rq_error"
+								},
+								{
+									"name": "rq_success"
+								},
+								{
+									"name": "rq_timeout"
+								},
+								{
+									"name": "rq_total"
+								},
+								{
+									"name": "cx_active",
+									"type": "GAUGE"
+								},
+								{
+									"name": "rq_active",
+									"type": "GAUGE"
+								}
+							],
+							"weight": 1
+						}
+					],
+					"name": "source.default.dc1.internal.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul",
+					"observability_name": "source.default.dc1.internal.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul"
 				}
 			]
 		},
@@ -2575,35 +2577,6 @@
 						{
 							"endpoint_config": {
 								"@type": "type.googleapis.com/envoy.config.endpoint.v3.ClusterLoadAssignment",
-								"cluster_name": "source.default.dc1.internal.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul",
-								"endpoints": [
-									{
-										"lb_endpoints": [
-											{
-												"endpoint": {
-													"address": {
-														"socket_address": {
-															"address": "10.60.5.17",
-															"port_value": 20000
-														}
-													},
-													"health_check_config": {}
-												},
-												"health_status": "HEALTHY",
-												"load_balancing_weight": 1
-											}
-										],
-										"locality": {}
-									}
-								],
-								"policy": {
-									"overprovisioning_factor": 140
-								}
-							}
-						},
-						{
-							"endpoint_config": {
-								"@type": "type.googleapis.com/envoy.config.endpoint.v3.ClusterLoadAssignment",
 								"cluster_name": "other.dc1.internal-v1.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul",
 								"endpoints": [
 									{
@@ -2643,6 +2616,35 @@
 														"socket_address": {
 															"address": "10.60.5.15",
 															"port_value": 8502
+														}
+													},
+													"health_check_config": {}
+												},
+												"health_status": "HEALTHY",
+												"load_balancing_weight": 1
+											}
+										],
+										"locality": {}
+									}
+								],
+								"policy": {
+									"overprovisioning_factor": 140
+								}
+							}
+						},
+						{
+							"endpoint_config": {
+								"@type": "type.googleapis.com/envoy.config.endpoint.v3.ClusterLoadAssignment",
+								"cluster_name": "source.default.dc1.internal.78a5e721-d62a-5adb-9b9a-b5e6d150842a.consul",
+								"endpoints": [
+									{
+										"lb_endpoints": [
+											{
+												"endpoint": {
+													"address": {
+														"socket_address": {
+															"address": "10.60.5.17",
+															"port_value": 20000
 														}
 													},
 													"health_check_config": {}
