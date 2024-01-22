@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: destination
+  namespace: default
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: destination
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: destination
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: destination
+      annotations:
+        consul.hashicorp.com/mesh-inject: "true"
+    spec:
+      serviceAccountName: destination
+      containers:
+      - name: destination-8080
+        image: nicholasjackson/fake-service:v0.26.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: LISTEN_ADDR
+          value: "0.0.0.0:8080"
+        - name: NAME
+          value: destination-8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: destination
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: destination
+  ports:
+    - port: 8080
+      name: "8080"
