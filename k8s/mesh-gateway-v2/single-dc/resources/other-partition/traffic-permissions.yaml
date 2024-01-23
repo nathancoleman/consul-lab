@@ -1,0 +1,16 @@
+apiVersion: auth.consul.hashicorp.com/v2beta1
+kind: TrafficPermissions
+metadata:
+  name: to-destination
+  namespace: default
+spec:
+  destination:
+    identityName: destination
+  action: ACTION_ALLOW
+  permissions:
+  - sources:
+    - identityName: source
+      namespace: default
+      partition: default
+
+

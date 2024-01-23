@@ -35,8 +35,7 @@ spec:
       labels:
         app: source
       annotations:
-        consul.hashicorp.com/mesh-inject: 'true'
-        consul.hashicorp.com/connect-service-upstreams: 'destination.svc.part-2.ap:1234'
+        consul.hashicorp.com/mesh-service-destinations: '8080.port.destination.svc.default.ns.other.ap:1234'
     spec:
       serviceAccountName: source
       containers:
