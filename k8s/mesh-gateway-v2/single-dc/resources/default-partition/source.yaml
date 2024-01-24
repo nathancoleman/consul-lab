@@ -42,3 +42,12 @@ spec:
       - name: source
         image: leodotcloud/swiss-army-knife:latest
         command: ["/bin/sleep", "3650d"]
+      - name: hello
+        image: nicholasjackson/fake-service:v0.26.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: LISTEN_ADDR
+          value: "0.0.0.0:8080"
+        - name: NAME
+          value: source-8080

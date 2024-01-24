@@ -1,11 +1,11 @@
 apiVersion: multicluster.consul.hashicorp.com/v2beta1
 kind: ExportedServices
 metadata:
-  name: other
+  name: default
   namespace: default
 spec:
   services:
-  - destination
+  - source
   - mesh-gateway
   consumers:
-  - partition: default
+  - partition: other

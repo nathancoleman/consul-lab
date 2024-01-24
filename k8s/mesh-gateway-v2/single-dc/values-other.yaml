@@ -36,8 +36,8 @@ global:
 externalServers:
   enabled: true
   tlsServerName: server.dc1.consul
-  hosts: ['34.74.84.177']
-  k8sAuthMethodHost: 'https://34.23.167.200'
+  hosts: ['35.185.28.144']
+  k8sAuthMethodHost: 'https://34.23.57.49'
   
 connectInject:
   default: true
