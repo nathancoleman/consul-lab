@@ -6,8 +6,8 @@ global:
   # acls:
   #   manageSystemACLs: true
 
-  image: ttl.sh/nathan-consul-ent-10:24h # hashicorppreview/consul-enterprise:1.18-dev
-  imageK8S: hashicorppreview/consul-k8s-control-plane:1.4-dev-54714a40b9f5bcc27fa2b80e32fcc341d29160bf
+  image: ttl.sh/nathan-consul-ent-32:24h # hashicorppreview/consul-enterprise:1.18-dev
+  imageK8S: hashicorppreview/consul-k8s-control-plane:1.4.0-dev-pr-87c07ed90aee3a0b887454a33bc5ec46a79ea229
 
   adminPartitions:
     enabled: true

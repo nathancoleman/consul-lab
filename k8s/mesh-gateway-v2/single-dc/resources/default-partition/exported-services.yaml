@@ -6,6 +6,5 @@ metadata:
 spec:
   services:
   - source
-  - mesh-gateway
   consumers:
   - partition: other

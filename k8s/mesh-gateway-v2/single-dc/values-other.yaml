@@ -10,14 +10,14 @@ global:
     caKey:
       secretName: consul-ca-key # See step 7 from `Install Consul server cluster`
       secretKey: tls.key
-  acls:
+  # acls:
     # manageSystemACLs: true
-    bootstrapToken:
-      secretName: consul-partitions-acl-token # See step 8 from `Install Consul server cluster`
-      secretKey: token
+    # bootstrapToken:
+    #   secretName: consul-partitions-acl-token # See step 8 from `Install Consul server cluster`
+    #   secretKey: token
 
-  image: hashicorppreview/consul-enterprise:1.18-dev
-  imageK8S: hashicorppreview/consul-k8s-control-plane:1.4-dev-54714a40b9f5bcc27fa2b80e32fcc341d29160bf
+  image: ttl.sh/nathan-consul-ent-32:24h # hashicorppreview/consul-enterprise:1.18-dev
+  imageK8S: hashicorppreview/consul-k8s-control-plane:1.4.0-dev-pr-87c07ed90aee3a0b887454a33bc5ec46a79ea229
 
   adminPartitions:
     enabled: true
@@ -36,8 +36,9 @@ global:
 externalServers:
   enabled: true
   tlsServerName: server.dc1.consul
-  hosts: ['35.185.28.144']
-  k8sAuthMethodHost: 'https://34.23.57.49'
+  hosts: ['104.196.4.148']
+  k8sAuthMethodHost: 'https://34.138.151.56'
+  skipServerWatch: true
   
 connectInject:
   default: true

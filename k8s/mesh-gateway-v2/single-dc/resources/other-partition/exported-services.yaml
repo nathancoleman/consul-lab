@@ -6,6 +6,5 @@ metadata:
 spec:
   services:
   - destination
-  - mesh-gateway
   consumers:
   - partition: default
