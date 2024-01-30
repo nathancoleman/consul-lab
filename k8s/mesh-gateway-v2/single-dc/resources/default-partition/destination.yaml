@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: destination
+  name: local-destination
   namespace: default
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: destination
+  name: local-destination
   namespace: default
 spec:
   selector:
@@ -21,9 +21,9 @@ spec:
       annotations:
         consul.hashicorp.com/mesh-inject: "true"
     spec:
-      serviceAccountName: destination
+      serviceAccountName: local-destination
       containers:
-      - name: destination-8080
+      - name: local-destination-8080
         image: nicholasjackson/fake-service:v0.26.0
         ports:
         - containerPort: 8080
@@ -35,8 +35,8 @@ spec:
             fieldRef:
               fieldPath: 'metadata.name'
         - name: MESSAGE
-          value: 'Hello from the other partition, port 8080!'
-      - name: destination-9090
+          value: 'Hello from the local partition, port 8080!'
+      - name: local-destination-9090
         image: nicholasjackson/fake-service:v0.26.0
         ports:
         - containerPort: 9090
@@ -48,12 +48,12 @@ spec:
             fieldRef:
               fieldPath: 'metadata.name'
         - name: MESSAGE
-          value: 'Hello from the other partition, port 9090!'
+          value: 'Hello from the local partition, port 9090!'
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: destination
+  name: local-destination
   namespace: default
 spec:
   type: ClusterIP
