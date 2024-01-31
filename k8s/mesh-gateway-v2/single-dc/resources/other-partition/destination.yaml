@@ -26,7 +26,8 @@ spec:
       - name: destination-8080
         image: nicholasjackson/fake-service:v0.26.0
         ports:
-        - containerPort: 8080
+        - name: "hello8080"
+          containerPort: 8080
         env:
         - name: LISTEN_ADDR
           value: "0.0.0.0:8080"
@@ -39,7 +40,8 @@ spec:
       - name: destination-9090
         image: nicholasjackson/fake-service:v0.26.0
         ports:
-        - containerPort: 9090
+        - name: "hello9090"
+          containerPort: 9090
         env:
         - name: LISTEN_ADDR
           value: "0.0.0.0:9090"
@@ -61,6 +63,6 @@ spec:
     app: destination
   ports:
     - port: 8080
-      name: "8080"
+      name: "hello8080"
     - port: 9090
-      name: "9090"
+      name: "hello9090"

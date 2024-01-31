@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   destination:
-    identityName: local-destination
+    identityName: destination
   action: ACTION_ALLOW
   permissions:
   - sources:
