@@ -18,6 +18,9 @@ Note that we use the subnetwork created for cluster-1 above.
 ```shell
 $ gcloud container clusters create cluster-2 --num-nodes=2 --enable-ip-alias --subnetwork=gke-cluster-1-subnet-b6526050
 ...
+
+$ kubectl get secret consul-ca-cert --context cluster-1 --output yaml | kubectl apply --context cluster-2 --filename -
+$ kubectl get secret consul-ca-key --context cluster-1 --output yaml | kubectl apply --context cluster-2 --filename -
 ```
 
 Now, you'll need to collect two IP addresses that are required for connecting to external Consul servers and plug them into `values-other.yaml` before Helm install.
