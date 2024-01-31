@@ -1,8 +1,14 @@
 ### Install
 
+Limitations:
+- Must install Consul into the `default` namespace
+- ACLs must be disabled
+
 #### Prepare Kubernetes Clusters
 
 The Kubernetes clusters need to be on a "flat" network, meaning that all IPs in cluster-1 are accessible from cluster-2 and vice versa.
+
+The assumption below is that the kubecontext for the default partition will be named `cluster-1` and the kubecontext for the other partition will be named `cluster-2`.
 
 ##### cluster-1
 ```shell
