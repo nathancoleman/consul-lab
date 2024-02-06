@@ -5,6 +5,6 @@ metadata:
   namespace: default
 spec:
   services:
-  - source
+  - destination
   consumers:
   - partition: other

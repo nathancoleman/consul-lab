@@ -29,6 +29,10 @@ $ kubectl get secret consul-ca-cert --context cluster-1 --output yaml | kubectl 
 $ kubectl get secret consul-ca-key --context cluster-1 --output yaml | kubectl apply --context cluster-2 --filename -
 ```
 
+You'll then need to set a firewall rule to allow traffic between the pods of each cluster.
+
+![](./firewall_rule.gif)
+
 Now, you'll need to collect two IP addresses that are required for connecting to external Consul servers and plug them into `values-other.yaml` before Helm install.
 
 ###### Host IP
