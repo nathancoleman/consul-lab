@@ -1,0 +1,10 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: SamenessGroup
+metadata:
+  name: backend
+  namespace: default
+spec:
+  defaultForFailover: true
+  includeLocal: true
+  members:
+  - peer: dc2

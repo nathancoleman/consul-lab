@@ -1,0 +1,7 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: MeshService
+metadata:
+  name: backend
+  namespace: default
+spec:
+  name: backend # The name of the Consul service
