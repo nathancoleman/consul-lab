@@ -1,0 +1,24 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: to-backend
+  namespace: default
+spec:
+  destination:
+    name: backend
+  sources:
+    - name: frontend
+      action: allow
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: to-frontend
+  namespace: default
+spec:
+  destination:
+    name: frontend
+  sources:
+    - name: api-gateway
+      samenessGroup: frontends
+      action: allow

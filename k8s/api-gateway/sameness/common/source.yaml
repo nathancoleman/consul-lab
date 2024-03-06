@@ -1,0 +1,52 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceDefaults
+metadata:
+  name: source
+  namespace: default
+spec:
+  protocol: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: source
+  name: source
+  namespace: default
+spec:
+  ports:
+  - port: 8080
+  selector:
+    app: source
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: source
+  namespace: default
+automountServiceAccountToken: true
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: source
+  name: source
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: source
+  template:
+    metadata:
+      labels:
+        app: source
+      annotations:
+        'consul.hashicorp.com/connect-service-upstreams': 'backend.svc:1234'
+    spec:
+      serviceAccountName: source
+      containers:
+      - name: source
+        image: leodotcloud/swiss-army-knife:latest
+        command: ["/bin/sleep", "3650d"]

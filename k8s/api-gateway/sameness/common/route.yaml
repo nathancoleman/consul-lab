@@ -1,7 +1,7 @@
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
 metadata:
-  name: backend-route-default
+  name: frontend
   namespace: default
 spec:
   parentRefs:
@@ -10,4 +10,4 @@ spec:
     - backendRefs:
       - group: consul.hashicorp.com
         kind: MeshService
-        name: backend
+        name: frontend

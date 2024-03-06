@@ -6,4 +6,4 @@ spec:
   services:
     - name: backend
       consumers:
-        - peer: dc1
+        - samenessGroup: backend
