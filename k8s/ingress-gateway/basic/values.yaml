@@ -12,3 +12,7 @@ connectInject:
 
 ingressGateways:
   enabled: true
+  logLevel: debug
+  defaults:
+    service:
+      type: LoadBalancer
