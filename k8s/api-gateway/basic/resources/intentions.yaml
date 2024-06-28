@@ -7,5 +7,17 @@ spec:
   destination:
     name: backend
   sources:
+    - name: frontend
+      action: allow
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: to-frontend-default
+  namespace: default
+spec:
+  destination:
+    name: frontend
+  sources:
     - name: api-gateway
       action: allow

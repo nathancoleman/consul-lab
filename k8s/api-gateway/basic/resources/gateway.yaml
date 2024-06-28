@@ -2,7 +2,7 @@ apiVersion: gateway.networking.k8s.io/v1beta1
 kind: Gateway
 metadata:
   name: api-gateway
-  namespace: default
+  namespace: consul
 spec:
   gatewayClassName: consul
   listeners:
@@ -13,17 +13,3 @@ spec:
       certificateRefs:
       - name: consul-server-cert
         namespace: consul
----
-apiVersion: gateway.networking.k8s.io/v1beta1
-kind: ReferenceGrant
-metadata:
-  name: secrets-grant
-  namespace: consul
-spec:
-  from:
-  - group: gateway.networking.k8s.io
-    kind: Gateway
-    namespace: default
-  to:
-  - group: ""
-    kind: Secret
