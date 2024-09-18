@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: snapshotjson
+  namespace: consul
+type: Opaque
+stringData:
+  snapshot.json: |
+    {
+      "snapshot_agent": {
+        "http_addr": "https://127.0.0.1:8501",
+        "datacenter": "dc1",
+        "snapshot": {
+          "interval": "2m",
+          "retain": 2
+        },
+        "backup_destinations": {
+          "azure_blob_storage": [
+            {
+              "account_name": "",
+              "container_name": "",
+              "environment": "AZUREPUBLICCLOUD",
+              "service_principal_id": "",
+              "service_principal_secret": "",
+              "tenant_id": ""
+            }
+          ]
+        }
+      }
+    }
+
