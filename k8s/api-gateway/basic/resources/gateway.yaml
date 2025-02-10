@@ -13,3 +13,19 @@ spec:
       certificateRefs:
       - name: consul-server-cert
         namespace: consul
+---
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: Gateway
+metadata:
+  name: api-gateway-default
+  namespace: default
+spec:
+  gatewayClassName: consul
+  listeners:
+  - name: https
+    protocol: HTTPS
+    port: 443
+    tls:
+      certificateRefs:
+      - name: consul-server-cert
+        namespace: consul

@@ -1,8 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: bastion
+  name: bastion
+  namespace: default
+spec:
+  ports:
+  - port: 8080
+  selector:
+    app: bastion
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: source
+  name: bastion
   namespace: default
 automountServiceAccountToken: true
 ---
@@ -10,23 +22,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: source
-  name: source
+    app: bastion
+  name: bastion
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: source
+      app: bastion
   template:
     metadata:
       labels:
-        app: source
-      annotations:
-        consul.hashicorp.com/mesh-service-destinations: 'hello8080.port.destination.svc.default.ns.other.ap:1234,hello9090.port.destination.svc.default.ns.other.ap:5678'
+        app: bastion
     spec:
-      serviceAccountName: source
+      serviceAccountName: bastion
       containers:
-      - name: source
+      - name: bastion
         image: leodotcloud/swiss-army-knife:latest
         command: ["/bin/sleep", "3650d"]

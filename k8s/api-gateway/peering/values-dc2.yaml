@@ -5,6 +5,8 @@ global:
     enabled: true
   tls:
     enabled: true
+  acls:
+    manageSystemACLs: true
 
 connectInject:
   enabled: true

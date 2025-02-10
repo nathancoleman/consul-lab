@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: httpbin
+  namespace: default
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpbin
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: httpbin
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: httpbin
+    spec:
+      serviceAccountName: httpbin
+      containers:
+      - name: httpbin
+        image: kennethreitz/httpbin
+        ports:
+        - containerPort: 80
+        env:
+        - name: LISTEN_ADDR
+          value: "0.0.0.0:8080"
+        - name: NAME
+          value: httpbin
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpbin
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: httpbin
+  ports:
+    - port: 80

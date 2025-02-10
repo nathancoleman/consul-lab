@@ -4,6 +4,7 @@ global:
   metrics:
     enabled: true
     enableGatewayMetrics: true
+  imageConsulDataplane: consul-dataplane:local
 
 connectInject:
   enabled: true
@@ -15,4 +16,4 @@ ingressGateways:
   logLevel: debug
   defaults:
     service:
-      type: LoadBalancer
+      type: ClusterIP

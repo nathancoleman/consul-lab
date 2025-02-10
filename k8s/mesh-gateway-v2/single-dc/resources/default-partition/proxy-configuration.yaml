@@ -1,9 +1,0 @@
-apiVersion: mesh.consul.hashicorp.com/v2beta1
-kind: ProxyConfiguration
-metadata:
-  name: source
-spec:
-  dynamicConfig:
-    meshGatewayMode: MESH_GATEWAY_MODE_LOCAL
-  workloads:
-    prefixes: [source]

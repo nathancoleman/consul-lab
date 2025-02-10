@@ -1,0 +1,25 @@
+global:
+  name: consul
+  datacenter: dc1
+
+  image: hashicorp/consul-enterprise:1.19-ent
+  enterpriseLicense:
+    secretName: license
+    secretKey: license
+
+  tls:
+    enabled: true
+    enableAutoEncrypt: true
+  
+  acls:
+    manageSystemACLs: true
+
+server:
+  snapshotAgent:
+    enabled: true
+    configSecret:
+      secretName: snapshotjson
+      secretKey: 'snapshot.json'
+
+connectInject:
+  enabled: true
