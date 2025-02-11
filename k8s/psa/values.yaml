@@ -1,0 +1,24 @@
+global:
+  name: consul
+  datacenter: dc1
+  imageK8S: consul-k8s-control-plane:local
+
+  # image: hashicorp/consul-enterprise:1.18-ent
+  # enterpriseLicense:
+  #   secretName: license
+  #   secretKey: license
+
+  tls:
+    enabled: true
+    enableAutoEncrypt: true
+  
+  acls:
+    manageSystemACLs: true
+
+connectInject:
+  enabled: true
+  transparentProxy:
+    defaultEnabled: false
+  apiGateway:
+    managedGatewayClass:
+      serviceType: NodePort
