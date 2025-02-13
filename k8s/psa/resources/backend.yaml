@@ -40,6 +40,15 @@ spec:
           value: "0.0.0.0:8080"
         - name: NAME
           value: backend
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          runAsNonRoot: true
+          runAsUser: 100
+          seccompProfile:
+            type: RuntimeDefault
 ---
 apiVersion: v1
 kind: Service
