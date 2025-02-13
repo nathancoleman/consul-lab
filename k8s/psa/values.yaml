@@ -22,3 +22,4 @@ connectInject:
   apiGateway:
     managedGatewayClass:
       serviceType: NodePort
+      mapPrivilegedContainerPorts: 8000
